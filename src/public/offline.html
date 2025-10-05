@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KYC Rural - ऑफ़लाइन</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #FFF8E7 0%, #F4E4BC 20%, #E8D5A3 40%, #D4C5A9 60%, #C8B99C 80%, #F0E6D2 100%);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #8B4513;
+    }
+    
+    .offline-container {
+      background: rgba(255, 248, 231, 0.95);
+      border: 2px solid #D2B48C;
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 1rem;
+      box-shadow: 0 8px 25px rgba(139, 69, 19, 0.15);
+      backdrop-filter: blur(10px);
+      max-width: 400px;
+    }
+    
+    .village-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+    
+    h1 {
+      color: #8B4513;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    
+    p {
+      color: #A0522D;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    
+    .retry-button {
+      background: linear-gradient(135deg, #8B4513, #A0522D);
+      color: white;
+      border: 3px solid #D2B48C;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .retry-button:hover {
+      background: linear-gradient(135deg, #A0522D, #CD853F);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+    }
+    
+    .features {
+      margin-top: 2rem;
+      text-align: left;
+    }
+    
+    .feature {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+    
+    .feature-icon {
+      margin-right: 0.5rem;
+      color: #228B22;
+    }
+  </style>
+</head>
+<body>
+  <div class="offline-container">
+    <div class="village-icon">🏘️</div>
+    
+    <h1>इंटरनेट कनेक्शन नहीं है</h1>
+    <h1>No Internet Connection</h1>
+    
+    <p>
+      कृपया अपना इंटरनेट कनेक्शन जांचें और दोबारा कोशिश करें।<br>
+      Please check your internet connection and try again.
+    </p>
+    
+    <button class="retry-button" onclick="window.location.reload()">
+      🔄 दोबारा कोशिश करें / Retry
+    </button>
+    
+    <div class="features">
+      <div class="feature">
+        <span class="feature-icon">✅</span>
+        <span>App installed on your device / आपके डिवाइस पर ऐप इंस्टॉल है</span>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">💾</span>
+        <span>Your data is saved locally / आपका डेटा स्थानीय रूप से सहेजा गया है</span>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">🔄</span>
+        <span>Will sync when connection returns / कनेक्शन वापस आने पर सिंक होगा</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

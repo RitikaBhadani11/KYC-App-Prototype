@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  
+  <!-- Basic Meta Tags -->
+  <title>KYC Rural India - Digital Identity Verification</title>
+  <meta name="description" content="Culturally appropriate KYC app for rural and semi-urban Indian users. Complete your identity verification easily in your preferred language." />
+  <meta name="keywords" content="KYC, rural India, identity verification, digital identity, village app, Hindi, regional languages" />
+  <meta name="author" content="KYC Rural India" />
+  
+  <!-- PWA Meta Tags -->
+  <meta name="theme-color" content="#8B4513" />
+  <meta name="background-color" content="#FFF8E7" />
+  <meta name="display" content="standalone" />
+  <meta name="orientation" content="portrait-primary" />
+  
+  <!-- Apple PWA Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="KYC Rural" />
+  <meta name="format-detection" content="telephone=no" />
+  
+  <!-- Apple Touch Icons -->
+  <link rel="apple-touch-icon" href="https://images.unsplash.com/photo-1611262360544-af37696056b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjB2aWxsYWdlJTIwaHV0cyUyMHRyYWRpdGlvbmFsfGVufDF8fHx8MTc1Njk5Nzc4OXww&ixlib=rb-4.1.0&q=80&w=180" sizes="180x180" />
+  <link rel="apple-touch-icon" href="https://images.unsplash.com/photo-1611262360544-af37696056b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjB2aWxsYWdlJTIwaHV0cyUyMHRyYWRpdGlvbmFsfGVufDF8fHx8MTc1Njk5Nzc4OXww&ixlib=rb-4.1.0&q=80&w=152" sizes="152x152" />
+  <link rel="apple-touch-icon" href="https://images.unsplash.com/photo-1611262360544-af37696056b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjB2aWxsYWdlJTIwaHV0cyUyMHRyYWRpdGlvbmFsfGVufDF8fHx8MTc1Njk5Nzc4OXww&ixlib=rb-4.1.0&q=80&w=120" sizes="120x120" />
+  
+  <!-- Android PWA Meta Tags -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="application-name" content="KYC Rural" />
+  
+  <!-- Microsoft PWA Meta Tags -->
+  <meta name="msapplication-TileColor" content="#8B4513" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="msapplication-navbutton-color" content="#8B4513" />
+  <meta name="msapplication-starturl" content="/" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="https://images.unsplash.com/photo-1611262360544-af37696056b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjB2aWxsYWdlJTIwaHV0cyUyMHRyYWRpdGlvbmFsfGVufDF8fHx8MTc1Njk5Nzc4OXww&ixlib=rb-4.1.0&q=80&w=32" sizes="32x32" />
+  <link rel="icon" type="image/x-icon" href="https://images.unsplash.com/photo-1611262360544-af37696056b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjB2aWxsYWdlJTIwaHV0cyUyMHRyYWRpdGlvbmFsfGVufDF8fHx8MTc1Njk5Nzc4OXww&ixlib=rb-4.1.0&q=80&w=16" sizes="16x16" />
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json" />
+  
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
+  
+  <!-- Language alternates -->
+  <link rel="alternate" hreflang="hi" href="/" />
+  <link rel="alternate" hreflang="en" href="/" />
+  <link rel="alternate" hreflang="mr" href="/" />
+  <link rel="alternate" hreflang="gu" href="/" />
+  <link rel="alternate" hreflang="te" href="/" />
+  <link rel="alternate" hreflang="ta" href="/" />
+  <link rel="alternate" hreflang="bn" href="/" />
+  <link rel="alternate" hreflang="kn" href="/" />
+  <link rel="alternate" hreflang="ml" href="/" />
+  
+  <!-- Prevent zooming on input focus (mobile) -->
+  <style>
+    @media screen and (max-width: 768px) {
+      input, textarea, select {
+        font-size: 16px !important;
+      }
+    }
+    
+    /* Prevent iOS rubber band scrolling */
+    body {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    
+    #root {
+      width: 100%;
+      height: 100vh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Hide address bar on mobile browsers */
+    @media screen and (max-width: 768px) {
+      html, body {
+        height: 100vh;
+        height: -webkit-fill-available;
+      }
+      
+      #root {
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  
+  <!-- PWA Installation Prompt -->
+  <div id="pwa-install-banner" style="display: none; position: fixed; bottom: 20px; left: 20px; right: 20px; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; padding: 16px; border-radius: 12px; box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3); z-index: 1000; text-align: center;">
+    <div style="margin-bottom: 12px;">
+      <strong>📱 Install KYC Rural App</strong><br>
+      <span style="font-size: 14px;">Get the full app experience on your device</span>
+    </div>
+    <button id="pwa-install-button" style="background: rgba(255, 255, 255, 0.2); border: 2px solid rgba(255, 255, 255, 0.3); color: white; padding: 8px 16px; border-radius: 8px; margin-right: 8px; cursor: pointer;">
+      Install App
+    </button>
+    <button id="pwa-dismiss-button" style="background: transparent; border: 2px solid rgba(255, 255, 255, 0.3); color: white; padding: 8px 16px; border-radius: 8px; cursor: pointer;">
+      Maybe Later
+    </button>
+  </div>
+  
+  <script type="module" src="/src/main.tsx"></script>
+  
+  <!-- PWA Service Worker Registration -->
+  <script>
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', async () => {
+        try {
+          const registration = await navigator.serviceWorker.register('/sw.js', {
+            scope: '/'
+          });
+          console.log('ServiceWorker registered successfully:', registration);
+          
+          // Update available
+          registration.addEventListener('updatefound', () => {
+            console.log('New ServiceWorker version available');
+          });
+          
+        } catch (error) {
+          console.error('ServiceWorker registration failed:', error);
+        }
+      });
+    }
+    
+    // PWA Install Prompt
+    let deferredPrompt;
+    const installBanner = document.getElementById('pwa-install-banner');
+    const installButton = document.getElementById('pwa-install-button');
+    const dismissButton = document.getElementById('pwa-dismiss-button');
+    
+    window.addEventListener('beforeinstallprompt', (e) => {
+      console.log('PWA install prompt triggered');
+      e.preventDefault();
+      deferredPrompt = e;
+      
+      // Show custom install banner
+      if (installBanner) {
+        installBanner.style.display = 'block';
+      }
+    });
+    
+    // Handle install button click
+    if (installButton) {
+      installButton.addEventListener('click', async () => {
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          const { outcome } = await deferredPrompt.userChoice;
+          console.log('PWA install outcome:', outcome);
+          deferredPrompt = null;
+          installBanner.style.display = 'none';
+        }
+      });
+    }
+    
+    // Handle dismiss button click
+    if (dismissButton) {
+      dismissButton.addEventListener('click', () => {
+        installBanner.style.display = 'none';
+        // Remember user dismissed (optional)
+        localStorage.setItem('pwa-dismissed', Date.now().toString());
+      });
+    }
+    
+    // Hide install prompt if already dismissed recently
+    if (localStorage.getItem('pwa-dismissed')) {
+      const dismissedTime = parseInt(localStorage.getItem('pwa-dismissed'));
+      const oneWeek = 7 * 24 * 60 * 60 * 1000;
+      
+      if (Date.now() - dismissedTime < oneWeek) {
+        // Don't show install prompt for a week after dismissal
+        window.addEventListener('beforeinstallprompt', (e) => {
+          e.preventDefault();
+        });
+      }
+    }
+    
+    // App installed event
+    window.addEventListener('appinstalled', () => {
+      console.log('PWA installed successfully');
+      installBanner.style.display = 'none';
+      deferredPrompt = null;
+    });
+    
+    // Hide address bar on mobile (delayed to allow for loading)
+    setTimeout(() => {
+      if (window.screen && window.screen.height) {
+        window.scrollTo(0, 1);
+      }
+    }, 500);
+    
+    // Prevent zoom on double tap for iOS
+    let lastTouchEnd = 0;
+    document.addEventListener('touchend', (event) => {
+      const now = (new Date()).getTime();
+      if (now - lastTouchEnd <= 300) {
+        event.preventDefault();
+      }
+      lastTouchEnd = now;
+    }, false);
+    
+    // Handle hardware back button on Android
+    if (window.history && window.history.pushState) {
+      window.addEventListener('popstate', (event) => {
+        // Let React Router handle the navigation
+        // This prevents the app from closing when back button is pressed
+      });
+    }
+  </script>
+</body>
+</html>

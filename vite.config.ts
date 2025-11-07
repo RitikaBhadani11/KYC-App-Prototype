@@ -51,12 +51,15 @@
       },
     },
     build: {
-      target: 'esnext',
-      outDir: 'dist',
-    },
+    target: 'esnext',
+    outDir: 'dist', // This should be 'dist' for Render
+    emptyOutDir: true, // Clean the dist folder before building
+  },
     
     server: {
       port: 3000,
       open: true,
     },
+       base: './',
+  publicDir: 'public'
   });
